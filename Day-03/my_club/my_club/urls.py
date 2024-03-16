@@ -16,9 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from members import views
+from members import views as mem
+from product import views as prd
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.member),
+    path('',mem.member),
+    path('math',mem.add),
+    path('pd',prd.cake),
+ 
+
+
 ]
