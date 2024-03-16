@@ -20,6 +20,7 @@ from members import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.django),
+    path('',views.mem),
+    path('bks',views.bkash)
     
 ]
