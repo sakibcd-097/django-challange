@@ -120,3 +120,16 @@ def upload_file(request):
     else:
         form = MyForm()
     return render(request, 'upload.html', {'form': form})
+
+
+from django import forms
+
+class MyForm(forms.Form):
+    name = forms.CharField(max_length=100)
+
+    def clean_name(self):
+        data = self.cleaned_data['name']
+        # Perform custom validation logic
+        if data == 'invalid':
+            raise forms.ValidationError("Invalid name")
+        return data
