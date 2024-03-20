@@ -63,3 +63,15 @@ def my_view(request):
     obj = MyModel.objects.get(id=1)
     obj.delete()
     return render(request, 'my_template.html')
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
