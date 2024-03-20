@@ -45,3 +45,9 @@ def my_view(request):
     else:
         form = MyForm()
     return render(request, 'my_template.html', {'form': form})
+
+
+
+def my_view(request):
+    my_objects = MyModel.objects.all()
+    return render(request, 'my_template.html', {'objects': my_objects})
