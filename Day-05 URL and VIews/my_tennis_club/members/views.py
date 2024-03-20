@@ -98,3 +98,12 @@ from django.shortcuts import redirect
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+from django.core.paginator import Paginator
+
+def my_view(request):
+    my_objects = MyModel.objects.all()
+    paginator = Paginator(my_objects, 10)
+    page_number = request.GET.get('page')
+    page_objects = paginator.get_page(page_number)
+    return render(request, 'my_template.html', {'objects': page_objects})add
