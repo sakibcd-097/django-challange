@@ -51,3 +51,11 @@ def my_view(request):
 def my_view(request):
     my_objects = MyModel.objects.all()
     return render(request, 'my_template.html', {'objects': my_objects})
+
+
+from .models import MyModel
+
+def my_view(request):
+    filtered_objects = MyModel.objects.filter(field='value')
+    return render(request, 'my_template.html', {'objects': filtered_objects})
+
