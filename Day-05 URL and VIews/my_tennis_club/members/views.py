@@ -22,3 +22,13 @@ def emoji_converter(request):
                 converted_text += char
         return render(request, 'emoji_converter.html', {'converted_text': converted_text})
     return render(request, 'emoji_converter.html')
+
+
+
+
+def random_joke(request):
+    response = requests.get('https://api.jokes.com/random')  # Example API endpoint
+    if response.status_code == 200:
+        joke = response.json().get('joke')
+        return render(request, 'random_joke.html', {'joke': joke})
+    return render(request, 'random_joke.html', {'joke': 'Failed to retrieve joke'})
