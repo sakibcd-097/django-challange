@@ -106,4 +106,17 @@ def my_view(request):
     paginator = Paginator(my_objects, 10)
     page_number = request.GET.get('page')
     page_objects = paginator.get_page(page_number)
-    return render(request, 'my_template.html', {'objects': page_objects})add
+    return render(request, 'my_template.html', {'objects': page_objects})
+
+from django.shortcuts import render, redirect
+from .forms import MyForm
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = MyForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = MyForm()
+    return render(request, 'upload.html', {'form': form})
