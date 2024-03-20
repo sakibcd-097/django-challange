@@ -11,6 +11,8 @@ def cake(request):
 
 
 
+
+
 def emoji_converter(request):
     if request.method == 'POST':
         text = request.POST.get('text')
@@ -32,3 +34,14 @@ def random_joke(request):
         joke = response.json().get('joke')
         return render(request, 'random_joke.html', {'joke': joke})
     return render(request, 'random_joke.html', {'joke': 'Failed to retrieve joke'})
+
+
+def my_view(request):
+    if request.method == 'POST':
+        form = MyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = MyForm()
+    return render(request, 'my_template.html', {'form': form})
