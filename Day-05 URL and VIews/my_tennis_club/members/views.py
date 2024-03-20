@@ -59,3 +59,7 @@ def my_view(request):
     filtered_objects = MyModel.objects.filter(field='value')
     return render(request, 'my_template.html', {'objects': filtered_objects})
 
+def my_view(request):
+    obj = MyModel.objects.get(id=1)
+    obj.delete()
+    return render(request, 'my_template.html')
