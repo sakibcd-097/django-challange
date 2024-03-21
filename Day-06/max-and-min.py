@@ -18,3 +18,23 @@ res = tuple(res)
 
 
 print("The extracted values : " + str(res)) 
+
+
+
+#Using list slicing + sorted() 
+
+
+check2_tup = (5, 20, 3, 7, 6, 8)
+
+
+print("The original tuple is : " + str(check2_tup))
+
+
+K = 2
+
+
+check2_tup = list(check2_tup)
+temp = sorted(check_tup)
+res = tuple(temp[:K] + temp[-K:])
+
+print("The extracted values : " + str(res)) 
