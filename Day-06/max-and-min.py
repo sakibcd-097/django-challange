@@ -52,3 +52,39 @@ largest = heapq.nlargest(K, check3_tup)
 result = tuple(sorted(smallest + largest))
 print("The extracted values : " +str(result))
 
+
+
+#Using while loop + sort() 
+
+tuples = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+print('Given tuple is: ', tuples)
+
+min1 = []
+max1 = []
+
+tuples = list(tuples)
+
+k = 2
+i = 0
+
+while i < k:
+	min1.append(min(tuples))
+	tuples. remove(min(tuples))
+	i = i+1
+
+i = 0
+while i < k:
+	max1. append(max(tuples))
+	tuples. remove(max(tuples))
+	i = i+1
+
+res = min1+max1
+
+res.sort()
+
+res = tuple(res)
+
+print('The minimum ', k, 'and maximum ', k, 'elements in the tuple are', res)
+
+
