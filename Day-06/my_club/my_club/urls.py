@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from members import views
+from product import views as pr
+from review import views as rv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.people),
+    path('pd',pr.cake),
+    path('cr',rv.customer),
 ]
