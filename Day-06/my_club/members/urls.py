@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.people),
+    path('mem',views.people),
    
 ]
