@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.cake),
+    path('tem/',views.cake),
   
 ]
