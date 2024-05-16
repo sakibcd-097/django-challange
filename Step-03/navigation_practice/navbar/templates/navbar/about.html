@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About Us</title>
-  <style>
-    /* CSS styles can be added here */
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
 </head>
 <body>
-  <header>
-    <h1>About Us</h1>
-  </header>
-
-  <nav>
-    <!-- Navigation menu goes here -->
-  </nav>
-
-  <main>
-    <section>
-      <h2>Our Story</h2>
-      <p>This is where you can tell the story of your company or organization.</p>
-    </section>
-
-    <section>
-      <h2>Our Team</h2>
-      <ul>
-        <li>John Doe - CEO</li>
-        <li>Jane Smith - CTO</li>
-        <li>Mark Johnson - CFO</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Our Mission</h2>
-      <p>Describe the mission and goals of your company or organization.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Your Company. All rights reserved.</p>
-  </footer>
-
+  <h1>This is about page</h1>
+  <h2>Name:{{name}}</h2>
+  <h2>Age:{{age}}</h2>
+  {% for i in courses%}
+  <h3>{{i.id}} {{i.name}} {{i.roll}}</h3>
+  {%endfor%}
 </body>
 </html>
